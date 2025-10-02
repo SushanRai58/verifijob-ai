@@ -14,7 +14,115 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      job_alerts: {
+        Row: {
+          alert_frequency: string | null
+          alert_name: string
+          created_at: string
+          id: string
+          is_active: boolean | null
+          keywords: string[]
+          location: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          alert_frequency?: string | null
+          alert_name: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          keywords: string[]
+          location?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          alert_frequency?: string | null
+          alert_name?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          keywords?: string[]
+          location?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_alerts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      saved_jobs: {
+        Row: {
+          company_name: string
+          created_at: string
+          id: string
+          job_title: string
+          job_url: string | null
+          notes: string | null
+          user_id: string
+          verification_status: string | null
+        }
+        Insert: {
+          company_name: string
+          created_at?: string
+          id?: string
+          job_title: string
+          job_url?: string | null
+          notes?: string | null
+          user_id: string
+          verification_status?: string | null
+        }
+        Update: {
+          company_name?: string
+          created_at?: string
+          id?: string
+          job_title?: string
+          job_url?: string | null
+          notes?: string | null
+          user_id?: string
+          verification_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_jobs_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
