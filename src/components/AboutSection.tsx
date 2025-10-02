@@ -2,13 +2,6 @@ import { GraduationCap, Shield, Target, Users, Award, BookOpen } from 'lucide-re
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
-  const teamMembers = [
-    { name: "Shravya", id: "4SF23CS206" },
-    { name: "Sushan Rai", id: "4SF23CS223" },
-    { name: "Thushar B K", id: "4SF23CS233" },
-    { name: "Arpitha Shetty", id: "4SF23CS251" }
-  ];
-
   const objectives = [
     {
       icon: <Target className="w-6 h-6" />,
@@ -136,70 +129,6 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Academic Information */}
-        <Card className="max-w-4xl mx-auto shadow-strong">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-foreground mb-2">Academic Project</h3>
-              <p className="text-muted-foreground">
-                Bachelor of Engineering in Computer Science & Engineering
-              </p>
-              <p className="text-muted-foreground">
-                Sahyadri College of Engineering & Management, Mangaluru
-              </p>
-              <p className="text-muted-foreground">
-                Under the guidance of <strong>Dr. Ananth Prabhu G</strong>
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-semibold text-foreground mb-4">Project Team</h4>
-                <div className="space-y-3">
-                  {teamMembers.map((member, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg">
-                      <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                        {member.name.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="font-medium text-foreground">{member.name}</div>
-                        <div className="text-sm text-muted-foreground">{member.id}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-foreground mb-4">Future Enhancements</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    Mobile application integration for quick verification
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    Internship opportunity verification system
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    Continuous algorithm updates for evolving scam trends
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    Integration with university placement portals
-                  </li>
-                </ul>
-
-                <div className="mt-6 p-4 bg-gradient-hero rounded-lg">
-                  <p className="text-primary-foreground text-sm font-medium">
-                    "Building a safer digital employment environment for the next generation of professionals."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
